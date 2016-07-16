@@ -5,7 +5,7 @@ from django.http import HttpResponsePermanentRedirect, Http404
 from django.shortcuts import render_to_response
 from django.utils.cache import patch_vary_headers
 from django.utils.http import urlquote
-from utils import make_tls_property
+from dynamicsites.utils import make_tls_property
 
 import logging
 import os
