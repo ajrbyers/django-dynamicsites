@@ -1,5 +1,5 @@
 from django.contrib.sites.models import Site
-from fields import SubdomainListField, FolderNameField
+from dynamicsites.fields import SubdomainListField, FolderNameField
 
 """
 Monkey-patch the Site object to include a list of subdomains

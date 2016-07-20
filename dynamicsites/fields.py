@@ -1,8 +1,7 @@
 from django import forms
 from django.db import models
 from django.core.validators import URLValidator, ValidationError
-from django.utils.encoding import smart_unicode
-from widgets import SubdomainTextarea, FolderNameInput
+from dynamicsites.widgets import SubdomainTextarea, FolderNameInput
 import re
 
 import logging
@@ -77,10 +76,10 @@ class SubdomainListField(models.TextField):
     def get_db_prep_value(self, value, connection=None, prepared=False):
         if not value: return ""
         assert(isinstance(value, list) or isinstance(value, tuple))
-        return u','.join([smart_unicode(s) for s in value])
+        return u','.join(s for s in value])
 
     def value_to_string(self, obj):
-        print 'value to string()'
+        print('value to string()')
         value = self._get_val_from_obj(obj)
         return self.get_db_prep_value(value)
         
